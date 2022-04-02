@@ -1,3 +1,5 @@
+//https://github.com/RichardWarburton/java-8-lambdas-exercises/tree/master/src/main/java/com/insightfullogic/java8/examples
+//
 //функциональный интерфейс - интерфейс с единственным абстрактным методом, который является типом лямбда-выражения
 //
 //stream - это средство конструирования сложных операций над коллекциями с применением функционального подхода
@@ -33,10 +35,14 @@ import java.util.stream.Stream;
 import chapter1.Album;
 import chapter1.Artist;
 import chapter1.Track;
+import lamdaJava.exercises.chapter3.Question31;
+import lamdaJava.exercises.chapter3.Question32;
+import lamdaJava.exercises.chapter3.Question33;
 
 import static chapter1.SampleData.membersOfTheBeatles;
 import static chapter1.SampleData.sampleShortAlbum2;
 import static chapter1.SampleData.albumsForTest;
+
 import static java.util.Arrays.asList;
 
 
@@ -178,6 +184,34 @@ public class LambaJava {
 		for(String name : names) {
 			System.out.println("name4::" + name);
 		}
+		
+		/*
+		 * quest31
+		 */
+		Question31 quest31 = new Question31();
+		Stream<Integer> st = Stream.of(2, 4, 6);
+		int result31 = quest31.addUp(st);
+		System.out.println("Question31: result31: " + result31);
+		
+		/*
+		 * quest32
+		 */
+		Question32 quest32 = new Question32();
+		List<Artist> artists = membersOfTheBeatles;
+		List<String> result32 = quest32.getNamesAndOrigins(artists);
+		for(String el : result32) {
+			System.out.println("Question32: result32: " + el);
+		}
+		
+		/*
+		 * quest33
+		 */
+		Question33 quest33 = new Question33();
+		List<Album> albums = albumsForTest;
+		List<Album> albumsRes = quest33.getAlbumsWithAtMostThreeTracks(albums);
+		for(Album el : albumsRes) {
+			System.out.println("Question33: albumRes: " + el.toString());
+		}
 	}
 	
 	/*
@@ -241,4 +275,7 @@ public class LambaJava {
 				
 		return result;
 	}
+	
+	
+	
 }

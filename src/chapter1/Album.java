@@ -67,4 +67,13 @@ public class Album implements Performance {
 	 * getMusicians().map(Artist::copy).collect(toList()); return new Album(name,
 	 * tracks, musicians); }
 	 */
+    
+    @Override
+    public String toString() {
+    	String tracks = "";
+    	for(Track track : this.getTrackList()) {
+    		tracks += track.getName() + ";";
+    	}
+        return getName() + tracks;
+    }
 }
