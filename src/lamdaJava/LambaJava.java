@@ -34,10 +34,13 @@ import java.util.stream.Stream;
 
 import chapter1.Album;
 import chapter1.Artist;
+import chapter1.SampleData;
 import chapter1.Track;
-import lamdaJava.exercises.chapter3.Question31;
-import lamdaJava.exercises.chapter3.Question32;
-import lamdaJava.exercises.chapter3.Question33;
+import lamdaJava.exercises.chapter3.Question11ch3;
+import lamdaJava.exercises.chapter3.Question12ch3;
+import lamdaJava.exercises.chapter3.Question13ch3;
+import lamdaJava.exercises.chapter3.Question2ch3;
+import youtLambda.StreamApiDemo;
 
 import static chapter1.SampleData.membersOfTheBeatles;
 import static chapter1.SampleData.sampleShortAlbum2;
@@ -50,7 +53,11 @@ public class LambaJava {
 
 	public static void main(String[] args) {
 		//Objects.requireNonNull(null);
-		System.out.println("hello");
+		
+		StreamApiDemo streamApiDemo = new StreamApiDemo();
+		streamApiDemo.runSample();
+		
+		System.out.println("#############################################");
 		
 		List<Artist> allArtist = membersOfTheBeatles;
 		int count = 0;
@@ -186,32 +193,40 @@ public class LambaJava {
 		}
 		
 		/*
-		 * quest31
+		 * quest113
 		 */
-		Question31 quest31 = new Question31();
+		Question11ch3 quest113 = new Question11ch3();
 		Stream<Integer> st = Stream.of(2, 4, 6);
-		int result31 = quest31.addUp(st);
+		int result31 = quest113.addUp(st);
 		System.out.println("Question31: result31: " + result31);
 		
 		/*
-		 * quest32
+		 * quest123
 		 */
-		Question32 quest32 = new Question32();
+		Question12ch3 quest123 = new Question12ch3();
 		List<Artist> artists = membersOfTheBeatles;
-		List<String> result32 = quest32.getNamesAndOrigins(artists);
+		List<String> result32 = quest123.getNamesAndOrigins(artists);
 		for(String el : result32) {
 			System.out.println("Question32: result32: " + el);
 		}
 		
 		/*
-		 * quest33
+		 * quest133
 		 */
-		Question33 quest33 = new Question33();
+		Question13ch3 quest133 = new Question13ch3();
 		List<Album> albums = albumsForTest;
-		List<Album> albumsRes = quest33.getAlbumsWithAtMostThreeTracks(albums);
+		List<Album> albumsRes = quest133.getAlbumsWithAtMostThreeTracks(albums);
 		for(Album el : albumsRes) {
 			System.out.println("Question33: albumRes: " + el.toString());
 		}
+		
+		/*
+		 * quest23
+		 */
+		Question2ch3 quest23 = new Question2ch3();
+		List<Artist> artists23 = SampleData.getThreeArtists();
+		int countArtists = quest23.countMembers(artists23);
+		System.out.println("Question2ch3: countArtists: " + countArtists);
 	}
 	
 	/*

@@ -6,10 +6,12 @@ import java.util.stream.Stream;
 
 import chapter1.Artist;
 
-public class Question32 {
+public class Question12ch3 {
 
-	/*
+	/**
 	 * на вход - исполнители, на выход строки - имя + место происхождения
+	 * @param artists
+	 * @return
 	 */
 	public List<String> getNamesAndOrigins(List<Artist> artists) {
 		List<String> result = artists.stream()
